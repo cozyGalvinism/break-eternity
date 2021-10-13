@@ -1965,27 +1965,27 @@ impl Neg for Decimal {
     }
 }
 
-#[cfg(feature = "serialization")]
+#[cfg(feature = "serde")]
 mod serde {
     use super::*;
 
-    impl serde::Serialize for Decimal {
+    impl serde_crate::Serialize for Decimal {
         fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
         where
-            S: serde::Serializer,
+            S: serde_crate::Serializer,
         {
             serializer.serialize_str(&self.to_string())
         }
     }
 
-    impl<'de> serde::Deserialize<'de> for Decimal {
+    impl<'de> serde_crate::Deserialize<'de> for Decimal {
         fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
         where
-            D: serde::Deserializer<'de>,
+            D: serde_crate::Deserializer<'de>,
         {
             let d = String::deserialize(deserializer)?;
             let dec: Result<Decimal, BreakEternityError> = d.as_str().try_into();
-            dec.map_err(|_| serde::de::Error::custom("Could not parse Decimal"))
+            dec.map_err(|_| serde_crate::de::Error::custom("Could not parse Decimal"))
         }
     }
 }
