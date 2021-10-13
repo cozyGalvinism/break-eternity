@@ -265,18 +265,9 @@ fn d_lambertw(z: Decimal, mut tol: Option<Number>) -> Result<Decimal, BreakEtern
     Err(BreakEternityError::IterationFailedConvering { z: z.to_number() })
 }
 
-#[cfg(not(feature = "godot"))]
 /// A Decimal number that can represent numbers as large as 10^^1e308 and as 'small' as 10^-(10^^1e308).
 #[derive(Clone, Copy, Debug, Default)]
-pub struct Decimal {
-    sign: i8,
-    layer: i64,
-    mag: Number,
-}
-
-#[cfg(feature = "godot")]
-/// A Decimal number that can represent numbers as large as 10^^1e308 and as 'small' as 10^-(10^^1e308).
-#[derive(Clone, Copy, Debug, Default, gdnative::FromVariant, gdnative::ToVariant)]
+#[cfg_attr(feature = "godot", derive(gdnative::FromVariant, gdnative::ToVariant))]
 pub struct Decimal {
     sign: i8,
     layer: i64,
