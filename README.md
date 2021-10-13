@@ -10,7 +10,7 @@ This library focuses less on precision and more on speed. It is intended to be u
 
 This crate has 2 more features that can be used:
 
-* `serialization`, which adds support for serde
+* `serde`, which adds support for serde
 * `godot`, which adds `FromVariant` and `ToVariant` from `gdnative` to the derived traits
 
 By default, both features are disabled. If you want this library to include support for a different library, please open an issue and tell me about it. I would be more than happy to add more support for game engines, since this is a library that's supposed to be used for games.

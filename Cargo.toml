@@ -1,6 +1,6 @@
 [package]
 name = "break-eternity"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2018"
 license-file = "LICENSE"
 description = "A numerical library to represent numbers as large as 10^^1e308 and as 'small' as 10^-(10^^1e308)."
