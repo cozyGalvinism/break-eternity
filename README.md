@@ -1,5 +1,7 @@
 # break-eternity
 
+![https://crates.io/crates/break-eternity](https://img.shields.io/crates/v/break-eternity.svg)
+
 A port of [Patashu's break_eternity.js](https://github.com/Patashu/break_eternity.js).
 
 A numerical library to represent numbers as large as 10^^1e308 and as 'small' as 10^-(10^^1e308).
