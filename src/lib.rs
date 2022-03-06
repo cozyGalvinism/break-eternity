@@ -269,9 +269,12 @@ fn d_lambertw(z: Decimal, mut tol: Option<Number>) -> Result<Decimal, BreakEtern
 #[derive(Clone, Copy, Debug, Default)]
 #[cfg_attr(feature = "godot", derive(gdnative::FromVariant, gdnative::ToVariant))]
 pub struct Decimal {
-    sign: i8,
-    layer: i64,
-    mag: Number,
+    /// Sign of the Decimal. 1 for positive, -1 for negative.
+    pub sign: i8,
+    /// Layer of magnitude.
+    pub layer: i64,
+    /// Magnitude of the Decimal.
+    pub mag: Number,
 }
 
 impl Decimal {
