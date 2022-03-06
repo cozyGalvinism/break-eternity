@@ -19,7 +19,6 @@ num-traits = "0.2.14"
 pad = "0.1.6"
 serde_crate = { package = "serde", version = "1.0.130", optional = true }
 gdnative = { version = "0.9.3", optional = true }
-rand = "0.8.5"
 
 [features]
 default = []
